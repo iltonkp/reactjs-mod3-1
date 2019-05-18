@@ -2,12 +2,7 @@ import { createStore, compose, applyMiddleware } from 'redux';
 
 import reducers from './reducers';
 
-const composer = process.env.NODE_ENV === 'development'
-  ? compose(
-    applyMiddleware(...[]),
-    console.tron.createEnhancer(),
-  )
-  : applyMiddleware(...[]);
+const composer = process.env.NODE_ENV === 'development' ? compose(applyMiddleware(...[])) : applyMiddleware(...[]);
 
 const store = createStore(reducers, composer);
 
