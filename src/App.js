@@ -1,4 +1,7 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+
+import './config/ReactotronConfig';
 
 const App = () => <h1>Hello World</h1>;
 
