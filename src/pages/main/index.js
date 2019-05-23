@@ -16,6 +16,7 @@ class Main extends Component {
     addFavoriteRequest: PropTypes.func.isRequired,
     favorites: PropTypes.shape({
       loading: PropTypes.bool,
+      error: PropTypes.oneOfType([null, PropTypes.string]),
       data: PropTypes.arrayOf(
         PropTypes.shape({
           id: PropTypes.number,
@@ -53,6 +54,7 @@ class Main extends Component {
           <button type="submit">Adicionar</button>
 
           {favorites.loading && <span>Carregando...</span>}
+          {!!favorites.error && <span style={{ color: '#f00' }}>{favorites.error}</span>}
         </form>
 
         <ul>
