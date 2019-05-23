@@ -1,7 +1,7 @@
 import { call, put } from 'redux-saga/effects';
 import api from '../../services/api';
 
-import { addFavoriteSuccess, addFavoriteFailure } from '../action/favorites';
+import { Creators as FavoritesActions } from '../ducks/favorites';
 
 export function* addFavorite(action) {
   try {
@@ -13,8 +13,8 @@ export function* addFavorite(action) {
       url: data.html_url,
     };
 
-    yield put(addFavoriteSuccess(repositoryData));
+    yield put(FavoritesActions.addFavoriteSuccess(repositoryData));
   } catch (err) {
-    yield put(addFavoriteFailure('Erro ao adicionar repositório'));
+    yield put(FavoritesActions.addFavoriteFailure('Erro ao adicionar repositório'));
   }
 }

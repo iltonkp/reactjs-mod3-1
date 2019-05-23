@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import * as FavoriteActions from '../../strore/action/favorites';
+import { Creators as FavoriteActions } from '../../strore/ducks/favorites';
 
 class Main extends Component {
   state = {
